@@ -1,10 +1,16 @@
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    margin: 0;
     background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#controls {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
 }
 
 #chessboard {
@@ -29,14 +35,27 @@ body {
 }
 
 .dark {
-    background-color: #769656; /* Dark green for dark squares */
+    background-color: #769656;
 }
 
 .white {
-    background-color: #eeeed2; /* Light beige for white squares */
+    background-color: #eeeed2;
 }
 
-.square:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
-    transform: scale(1.05); /* Slightly enlarges the cell */
+/* Themes */
+#chessboard.theme-forest .dark { background-color: #228b22; }
+#chessboard.theme-forest .white { background-color: #a1e0a1; }
+
+#chessboard.theme-ocean .dark { background-color: #1e3d59; }
+#chessboard.theme-ocean .white { background-color: #d0efff; }
+
+#chessboard.theme-desert .dark { background-color: #c19a6b; }
+#chessboard.theme-desert .white { background-color: #fff8dc; }
+
+/* Messages */
+#message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
 }
